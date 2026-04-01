@@ -17,8 +17,7 @@ const Header = () => {
 
   return (
     <nav className='w-full h-16 bg-gray-900 text-white flex justify-between items-center px-4 md:px-8 sticky top-0 z-50 shadow-md'>
-      {/* Logo Section */}
-      <div className='flex-shrink-0'>
+      <div className='shrink-0'>
         <Link to={'/home'}>
           <p className='text-xl md:text-2xl font-bold tracking-wide flex items-center'>
             <span className='mr-1'>🎬</span>
@@ -41,7 +40,7 @@ const Header = () => {
           <input 
             type="text" 
             className='w-full bg-white text-black rounded-full px-4 py-1.5 outline-none text-sm md:text-base focus:ring-2 focus:ring-amber-400 transition-all' 
-            placeholder='Search...' 
+            placeholder='press space to Search...' 
             onChange={(e) => setsearchval(e.target.value)} 
             value={searchval}
           />

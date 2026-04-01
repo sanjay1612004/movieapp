@@ -13,7 +13,11 @@ const Card = ({ data }) => {
                 <img
                     src={Poster}
                     className='max-h-full max-w-full object-contain py-2 px-4 dark:bg-gray-800'
-                    alt={Title}
+                    alt=""
+                      onError={(e)=>{
+    e.target.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOiZRsIjanQl7ypLmJRaxHnoJ5S6XVzlNT9Q&s"
+  }}
+
                 />
 
             </div>

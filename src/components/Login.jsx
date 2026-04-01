@@ -28,7 +28,7 @@ const LoginPage = () => {
         if (email!="" && password!=""){
             if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && ispassword(password)){
                 setislogin(true)
-                localStorage.setItem("login","true")
+                sessionStorage.setItem("login","true")
 
                 navigate('/home')
             }
@@ -97,6 +97,8 @@ const LoginPage = () => {
                 console.log(response);
                 console.log(response.credential)
                 setislogin(true)
+                sessionStorage.setItem("login","true")
+
                 navigate("/home")
                 }} 
                 onError={()=>console.log("Login")}/>

@@ -15,7 +15,10 @@ const App = () => {
   const[theme,settheme]=useState(false)
   const[searchval,setsearchval]=useState("")
   const[debounce,setdebounce]=useState('')
-  const [islogin,setislogin]=useState(localStorage.getItem("login")=="true")
+  // localStorage.setItem("login","false")
+
+  const [islogin,setislogin]=useState(sessionStorage.getItem("login")=="true")
+  
   useEffect(()=>{
   if(theme){
     document.body.className="bg-white text-black"

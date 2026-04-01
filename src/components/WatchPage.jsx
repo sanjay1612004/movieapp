@@ -28,7 +28,10 @@ const WatchPage = () => {
     <div className='my-15 flex '>
     <div className='flex flex-col md:flex-row  my-auto gap-5 mx-3 px-3 bg-white shadow-[0_10px_25px_rgba(0,0,0,0.4)] w-full dark:bg-slate-800 p-4'>
       <div className='w-full md:w-[25%] h-72 md:h-96 flex justify-center'>
-        <img src={Poster} alt="" className='h-full  w-full '/>
+        <img src={Poster} alt="" className='h-full  w-full '   onError={(e)=>{
+    e.target.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOiZRsIjanQl7ypLmJRaxHnoJ5S6XVzlNT9Q&s"
+  }}
+/>
       </div>
       <div className='w-full md:w-[75%] ml-2 pl-1'>
         <div className='mt-2'>
