@@ -12,15 +12,27 @@ const LoginPage = () => {
     const [password, setpassword] = useState("")
     const navigate=useNavigate()
 
+    function ispassword(password){
+        const strongRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    return strongRegex.test(password);
+
+    }
+
     function handleLogin(e) {
         e.preventDefault()
 
         console.log(email, password)
 
-        // add auth logic here
         if (email!="" && password!=""){
-            navigate('/home')
-            setislogin(true)
+            if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email) && ispassword(password)){
+                setislogin(true)
+                localStorage.setItem("login","true")
+
+                navigate('/home')
+            }
+           
         }
     }
 

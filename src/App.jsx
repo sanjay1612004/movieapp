@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import DisplayPage from './components/DisplayPage'
 import WatchPage from './components/WatchPage'
@@ -15,9 +15,16 @@ const App = () => {
   const[theme,settheme]=useState(false)
   const[searchval,setsearchval]=useState("")
   const[debounce,setdebounce]=useState('')
-  const [islogin,setislogin]=useState(false)
+  const [islogin,setislogin]=useState(localStorage.getItem("login")=="true")
+  useEffect(()=>{
+  if(theme){
+    document.body.className="bg-white text-black"
+  }else{
+    document.body.className="bg-gray-800 text-white"
+  }
+},[theme])
   return (
-    <div>
+    <div className=''>
       <LoginContext.Provider value={{islogin,setislogin}}>
       <GoogleOAuthProvider clientId={client_iD}>
       <DebounceContext.Provider value={{debounce,setdebounce}}>

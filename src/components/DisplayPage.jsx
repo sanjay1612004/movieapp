@@ -3,6 +3,7 @@ import Card from './Card'
 import { Link } from 'react-router-dom'
 import Header from './Header'
 import { DebounceContext, ThemeContext } from '../App'
+import ShimmerSkeleton from './ShimmerSkeleton'
 
 const DisplayPage = () => {
     const {theme,settheme}=useContext(ThemeContext)
@@ -66,10 +67,10 @@ const DisplayPage = () => {
     },[debounce])
 
     return (
-        <div className={!theme?'dark dark:bg-gray-800 h-full':'dark:bg-gray-800 '}>
-        <div className='flex flex-wrap'>
+        <div className={!theme?'dark dark:bg-gray-800 h-full':'dark:bg-gray-800 h-full'}>
+        <div className='flex flex-wrap justify-center'>
             {console.log(res)}
-            {filtered.length === 0 && <p>loading....</p>}
+            {filtered.length === 0 && <ShimmerSkeleton/>}
             {filtered.length > 0 && filtered?.map((item, ind) => {
                 return <Link to={`/watch/${item.imdbID}`}><Card data={item} /></Link>
 
