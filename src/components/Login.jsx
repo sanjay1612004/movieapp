@@ -39,9 +39,9 @@ const LoginPage = () => {
     return (
 
         <div className={!theme ?
-            "bg-gray-800 min-h-screen flex flex-col items-center"
+            "bg-gray-800 min-h-screen flex flex-col items-center px-6"
             :
-            "bg-white min-h-screen flex flex-col items-center"
+            "bg-white min-h-screen flex flex-col items-center px-6"
         }>
 
             <h1 className='text-4xl text-white font-bold mt-10'>
@@ -50,7 +50,7 @@ const LoginPage = () => {
 
             <form
                 onSubmit={handleLogin}
-                className='bg-gray-900 p-8 rounded-xl mt-10 w-100 shadow-lg h-100'
+                className='bg-gray-900 p-8 rounded-xl mt-10 w-full shadow-lg mx-4 max-w-md'
             >
 
                 <div className='flex flex-col mb-4'>
